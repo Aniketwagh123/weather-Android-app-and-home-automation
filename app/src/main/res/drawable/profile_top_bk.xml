@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- _bg__view_02_ek2 from your XD file. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="rectangle" >
+	<corners
+		android:bottomLeftRadius="30dp"
+		android:bottomRightRadius="30dp"/>
+	<gradient
+		android:angle="270"
+		android:type="linear"
+		android:startColor="#6172DA"
+		android:endColor="#969CC6" />
+
+<!--	<solid android:color="#6776D1" />-->
+</shape>
+

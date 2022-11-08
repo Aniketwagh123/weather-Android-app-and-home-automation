@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- rectangle_copy_8 from your XD file. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="rectangle" >
+	<corners android:radius="10dp" />
+<!--	<stroke android:color="#ffffff" android:width="4dp" />-->
+	<gradient
+		android:type="linear"
+		android:startColor="#E52B2B"
+		android:endColor="#1F11CE"
+		android:angle="0"
+		/>
+</shape>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+<!--    <color name="transparent">##00FFFFFF</color>-->
+
+    <color name="_bg__view_04_ek2_color">#ffffff</color>
+    <color name="_13_minutes_ago_color">#ffffff</color>
+    <color name="background_02_color">#32333d</color>
+    <color name="rectangle_copy_10_color">#202c36</color>
+
+
+    <color name="colorPrimary">#1F5BF3</color>
+    <color name="colorPrimaryDark">#0947E8</color>
+    <color name="colorAccent">#00A5FF</color>
+    <color name="dashbk">#F5F5F5</color>
+
+    <!--colors for modern ui-->
+
+    <!--colros for card-->
+
+        <!--    <color name="purple_200">#FFBB86FC</color>-->
+        <!--    <color name="purple_500">#FF6200EE</color>-->
+        <!--    <color name="purple_700">#FF3700B3</color>-->
+        <!--    <color name="teal_200">#FF03DAC5</color>-->
+        <!--    <color name="teal_700">#FF018786</color>-->
+        <!--    <color name="black">#FF000000</color>-->
+        <!--    <color name="white">#FFFFFFFF</color>-->
+
+
+    <color name="location_history_color">#ababab</color>
+    <color name="rectangle_copy_3_color">#212d3a</color>
+    <color name="rectangle_color">#495abf</color>
+    <color name="november_2018_color">#3b3939</color>
+    <color name="oval_color">#d8d8d8</color>
+    <color name="thu_color">#1c1a1a</color>
+    <color name="nov_03__2018_color">#868793</color>
+    <color name="nov_03__2018_ek1_color">#5d6972</color>
+    <color name="oval_ek1_color">#ff2c23</color>
+    <color name="_12_color">#73767f</color>
+    <color name="rectangle_copy_9_ek1_color">#000000</color>
+    <color name="_6_ek1_color">#5f626b</color>
+    <color name="saf">#7C531F</color>
+    <color name="red">#F40404</color>
+    <color name="blue">#248BD1</color>
+</resources>
