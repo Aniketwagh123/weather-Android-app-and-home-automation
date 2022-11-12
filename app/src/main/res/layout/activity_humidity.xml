@@ -19,7 +19,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp">
 
                 <ImageView
                     android:id="@+id/back_arrow"
@@ -55,14 +56,24 @@
 
             </RelativeLayout>
 
-                <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/humidity_line_chart"
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_below="@+id/top_navigation"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="40dp" />
+                android:layout_height="10dp"
+                android:layout_below="@id/top_navigation"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/humidity_chart_shape_2" />
+
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/humidity_line_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/top_navigation"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp" />
+
 
                 <RelativeLayout android:id="@+id/horizontal_history"
                     android:layout_below="@+id/humidity_line_chart"
@@ -86,14 +97,15 @@
                             android:fontFamily="AvertaStd-Regular"
                             android:text="@string/today"
                             android:textColor="@color/november_2018_color"
-                            android:textSize="16sp" />
+                            android:textSize="18sp" />
 
                         <View   android:id="@+id/oval"
                             android:background="@drawable/oval_shape"
-                            android:backgroundTint="@color/black"
+                            android:backgroundTint="@color/green"
                             android:layout_marginTop="1dp"
                             android:layout_width="18dp"
                             android:layout_height="18dp" />
+
 
                     </RelativeLayout>
 
@@ -105,13 +117,21 @@
                         android:layout_marginStart="160dp"
                         android:layout_marginTop="-10dp"
                         android:text="jan 01 2022"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:onClick="openDatePicker"/>
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:alpha=".7"
+                        android:textSize="16sp" />
 
 
                 </RelativeLayout>
-                <RelativeLayout android:id="@+id/visibility_history"
+            <View
+                android:layout_below="@id/horizontal_history"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginHorizontal="0dp"
+                android:background="@drawable/humidity_chart_shape"/>
+            <RelativeLayout android:id="@+id/visibility_history"
                     android:layout_below="@id/horizontal_history"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"
@@ -241,7 +261,7 @@
                             android:layout_marginTop="15dp"
                             android:layout_width="45dp"
                             android:layout_height="22.5dp"
-                            android:text="@string/_38_74_string"
+                            android:text="38"
                             />
 
                         <TextView android:id="@+id/_13_minutes_ago"
@@ -273,8 +293,8 @@
                             android:textColor="@color/white"
                             android:layout_marginLeft="190dp"
                             android:layout_marginTop="15dp"
-                            android:layout_width="95dp"
-                            android:layout_height="22.5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="@string/_48_minutes_ago_string"
                             />
 
@@ -293,7 +313,7 @@
                             android:layout_marginTop="15dp"
                             android:layout_width="45dp"
                             android:layout_height="22.5dp"
-                            android:text="@string/_24_53_string"
+                            android:text="24"
                             />
 
 
@@ -350,7 +370,7 @@
                             android:layout_marginTop="15dp"
                             android:layout_width="45dp"
                             android:layout_height="22.5dp"
-                            android:text="@string/_18_29_string"
+                            android:text="18"
                             />
 
 

@@ -54,6 +54,15 @@
 
             </RelativeLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/top_navigation"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/temperature_chart_shape" />
+
+
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/humidity_line_chart"
                 android:layout_width="match_parent"
@@ -62,6 +71,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="40dp" />
+
 
             <RelativeLayout android:id="@+id/horizontal_history"
                 android:layout_below="@+id/humidity_line_chart"
@@ -105,10 +115,19 @@
                     android:layout_marginTop="-10dp"
                     android:text="jan 01 2022"
                     android:textColor="@color/black"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:onClick="openDatePicker"/>
 
 
             </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/horizontal_history"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/temperature_chart_shape" />
             <RelativeLayout android:id="@+id/visibility_history"
                 android:layout_below="@id/horizontal_history"
                 android:layout_centerHorizontal="true"
@@ -124,7 +143,7 @@
                     android:alpha=".4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/humidity_string"
+                    android:text="@string/temperature"
                     />
 
                 <TextView android:id="@+id/time"
@@ -504,5 +523,6 @@
 
         </RelativeLayout>
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

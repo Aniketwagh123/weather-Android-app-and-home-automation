@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
+import com.airbnb.lottie.utils.Utils;
 import com.example.techno.R;
 import com.example.techno.model.SensorData;
 import com.example.techno.model.Users;
@@ -34,6 +35,9 @@ import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -60,64 +64,41 @@ public class Humidity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_humidity);
 
-        initDatePicker();
-        datePickerBtn = findViewById(R.id.date_picker_button);
-        datePickerBtn.setText(getTodaysDate());
         loadChart();
+        pickDate();
 
     }
 
-    private String getTodaysDate() {
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH)+1;
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        return makeDateString(day, month, year);
-    }
+    private void pickDate(){
+        final Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-    private void initDatePicker(){
-        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+        datePickerBtn = findViewById(R.id.date_picker_button);
+        String date = day+"/"+(month+1)+"/"+year;
+        datePickerBtn.setText(date);
+
+        datePickerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month+1;
-                String date = makeDateString(day,month,year);
-                datePickerBtn.setText(date);
+            public void onClick(View view) {
+                DatePickerDialog dialog = new DatePickerDialog(Humidity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        month = month +1;
+                        String date = day+"/"+month+"/"+year;
+                        datePickerBtn.setText(date);
+                    }
+                },year,month,day);
+
+                dialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+//                dialog.getDatePicker().setMinDate(11);
+                dialog.setMessage("😊"+" Select a date to see stats !");
+                dialog.show();
             }
-        };
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-
-        int style = AlertDialog.THEME_HOLO_LIGHT;
-
-        datePickerDialog = new DatePickerDialog(this,style,dateSetListener,year,month,day);
-        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+        });
     }
 
-    private String makeDateString(int day, int month, int year) {
-        return getMonthFormat(month)+" "+day+" "+year;
-    }
-
-    private String getMonthFormat(int month) {
-        if (month == 1)return "JAN";
-        else if (month == 2)return "FEB";
-        else if (month == 3)return "MAR";
-        else if (month == 4)return "APR";
-        else if (month == 5)return "MAY";
-        else if (month == 6)return "JUN";
-        else if (month == 7)return "JUL";
-        else if (month == 8)return "AUG";
-        else if (month == 9)return "SEP";
-        else if (month == 10)return "OCT";
-        else if (month == 11)return "NOV";
-        else  return "DEC";
-
-    }
-
-    public void openDatePicker(View view) {
-        datePickerDialog.show();
-    }
 
     private ArrayList<Entry> dataValues1(){
         ArrayList<Entry> dataValues = new ArrayList<Entry>();
@@ -195,6 +176,7 @@ public class Humidity extends AppCompatActivity {
         mpLineChart.setPinchZoom(true);
         mpLineChart.setDoubleTapToZoomEnabled(true);
         mpLineChart.getDescription().setEnabled(false);
+        mpLineChart.getLegend().setEnabled(false);
 
 
         LineDataSet lineDataSet1 = new LineDataSet(dataValues,"");
@@ -224,9 +206,10 @@ public class Humidity extends AppCompatActivity {
         xAxis.setDrawGridLines(true);
         xAxis.setGranularity(1f);  // x label val increase by 1
         xAxis.setValueFormatter(new LineChartXAxisValueFormatter());
-        YAxis left = mpLineChart.getAxisRight();
-        left.setDrawLabels(false);
+        YAxis right = mpLineChart.getAxisRight();
+        right.setDrawLabels(false);
         xAxis.setLabelRotationAngle(20);
+//        mpLineChart.getAxisLeft().setGranularity(1f);
 
         //Reload or launch chart
         mpLineChart.invalidate();
@@ -256,32 +239,23 @@ public class Humidity extends AppCompatActivity {
         RetrofitService retrofitService = new RetrofitService();
         UserApi userApi = retrofitService.getRetrofit().create(UserApi.class);
 
+        Log.v("eee","Hi i am live");
         userApi.findByUsername("Aniket")
                 .enqueue(new Callback<Users>() {
                     @Override
                     public void onResponse(Call<Users> call, Response<Users> response) {
                         List<SensorData> data = response.body().getSensor_data();
-                        Log.v("humidity",data.toString());
-//                        ArrayList<Integer>humidity = new ArrayList<>();
+                        Log.v("eee",data.toString());
                         for (int i = 0 ; i<data.size();i++){
                             dataValues.add(new Entry(i,data.get(i).getHumidity()));
                         }
-
-
-//                        dataValues.add(new Entry(0,30));
-//                        dataValues.add(new Entry(1,20));
-//                        dataValues.add(new Entry(2,0));
-//                        dataValues.add(new Entry(3,30));
-//                        dataValues.add(new Entry(17,45));
-//                        dataValues.add(new Entry(18,68));
-//                        dataValues.add(new Entry(19,45));
-//                        dataValues.add(new Entry(20,68));
                         designChart();
+
                     }
 
                     @Override
                     public void onFailure(Call<Users> call, Throwable t) {
-
+                        Log.v("eee",t+"ncnvc");
                     }
                 });
         refresh(5000);
@@ -296,7 +270,6 @@ public class Humidity extends AppCompatActivity {
         };
         handler.postDelayed(runnable,milliSeconds);
     }
-
     public class LineChartXAxisValueFormatter extends IndexAxisValueFormatter {
 
         @Override
@@ -310,7 +283,13 @@ public class Humidity extends AppCompatActivity {
             Date timeMilliseconds = new Date(emissionsMilliSince1970Time);
             DateFormat dateTimeFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault());
 
-            return dateTimeFormat.format(timeMilliseconds);
+            return "Nov 8 2022";
+
+
+
+
         }
+
+
     }
 }

@@ -11,6 +11,7 @@ public class SensorData {
     private int temp;
     private Date date ;
 
+
     public int getRow_no() {
         return row_no;
     }

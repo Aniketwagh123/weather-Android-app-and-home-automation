@@ -5,6 +5,7 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/drawable-v24/humidity_chart_shape.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable-v24/oval_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/thermometer_temperature_svgrepo_com.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/_bg__view_01_ek2_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/_bg__view_02_ek2_shape.xml" value="0.1" />
@@ -18,6 +19,8 @@
         <entry key="app/src/main/res/drawable/background_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/button_background_blue.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/dashbord_top_bk.xml" value="0.12" />
+        <entry key="app/src/main/res/drawable/humidity_chart_shape_2.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_about.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/ic_login_bk.xml" value="0.1" />
@@ -33,12 +36,13 @@
         <entry key="app/src/main/res/drawable/rectangle_copy_8_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rectangle_copy_9_shape.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/selector.xml" value="0.1725" />
+        <entry key="app/src/main/res/drawable/temperature_chart_shape.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.13667449951171876" />
         <entry key="app/src/main/res/layout/activity_account.xml" value="0.2984115600585938" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2157676348547718" />
         <entry key="app/src/main/res/layout/activity_forget_password.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_heat_index.xml" value="0.19375" />
-        <entry key="app/src/main/res/layout/activity_humidity.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/activity_humidity.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.14361702127659576" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2531936645507813" />
         <entry key="app/src/main/res/layout/activity_relative_humidity.xml" value="0.19375" />

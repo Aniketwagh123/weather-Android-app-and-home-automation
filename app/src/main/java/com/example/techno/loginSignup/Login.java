@@ -80,6 +80,7 @@ public class Login extends AppCompatActivity {
                                 }
                                 else {
                                     Toast toast = Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_SHORT);
+                                    Log.v("Error",response.errorBody().toString());
                                     toast.show();
                                 }
 
@@ -87,7 +88,7 @@ public class Login extends AppCompatActivity {
 
                             @Override
                             public void onFailure(Call<Users> call, Throwable t) {
-
+                                Log.v("Error 1",t.toString());
                             }
                         });
 
