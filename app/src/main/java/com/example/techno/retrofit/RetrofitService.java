@@ -14,7 +14,7 @@ public class RetrofitService {
 
     private void initializeRetrofit(){
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.2:8080") // IP/url of system where server is running
+                .baseUrl("https://speing-boot-app-production.up.railway.app") // IP/url of system where server is running
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .build();
 

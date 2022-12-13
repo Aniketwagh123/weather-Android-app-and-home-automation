@@ -15,19 +15,19 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface UserApi {
-    @GET("/Users/get-all")
+    @GET("/users/get-all")
     Call<List<Users>> getAllUsers();
 
-    @GET("/Users/username")
+    @GET("/users/username")
     Call<Users> findByUsername(@Query("username") String username);
 
-    @GET("/Users/deviceId")
+    @GET("/users/deviceId")
     Call<Boolean> isUniqueDeviceId(@Query("deviceId") String deviceId);
 
-    @POST("/Users/save")
+    @POST("/users/save")
     Call<Users> save(@Body Users user);
 
-    @GET("/Users/sdata")
+    @GET("/users/sdata")
     Call<ArrayList<SensorData>> getSensorData(String username, Date startDate , Date endDate);
 
 }

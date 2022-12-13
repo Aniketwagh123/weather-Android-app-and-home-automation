@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dashboard_bk_pic2"
+    android:background="@drawable/bkapp"
     tools:context=".Dashboard">
 
 
@@ -22,12 +22,12 @@
                 android:id="@+id/dashboard_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:fontFamily="serif"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="40dp"
-                android:text="Hello Aniket"
-                android:textColor="@color/black"
+                android:fontFamily="serif"
+                android:text="Weather"
+                android:textAlignment="center"
+                android:textColor="@color/teal_200"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 

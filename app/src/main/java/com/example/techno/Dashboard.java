@@ -94,7 +94,7 @@ public class Dashboard extends AppCompatActivity {
 //        String[] descriptions = {getString(R.string.lorem),getString(R.string.lorem),getString(R.string.lorem),getString(R.string.lorem)};
 
         String[] day = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
-        String[] date = {"Nov 16,2022","Nov 17,2022","Nov 18,2022","Nov 19,2022","Nov 20,2022","Nov 21,2022","Nov 22,2022"};
+        String[] date = {"Nov 13,2022","Nov 14,2022","Nov 15,2022","Nov 16,2022","Nov 10,2022","Nov 11,2022","Nov 12,2022"};
         String[] humidity = {"30 g.m-3","31 g.m-3","32 g.m-3","33 g.m-3","34 g.m-3","45 g.m-3","46 g.m-3"};
         String[] temperature = {"50 °C","51 °C","52 °C","53 °C","54 °C","55 °C","56 °C"};
 

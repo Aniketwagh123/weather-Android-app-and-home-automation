@@ -38,7 +38,7 @@
         <entry key="app/src/main/res/drawable/selector.xml" value="0.1725" />
         <entry key="app/src/main/res/drawable/temperature_chart_shape.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.13667449951171876" />
-        <entry key="app/src/main/res/layout/activity_account.xml" value="0.2984115600585938" />
+        <entry key="app/src/main/res/layout/activity_account.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2157676348547718" />
         <entry key="app/src/main/res/layout/activity_forget_password.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_heat_index.xml" value="0.19375" />

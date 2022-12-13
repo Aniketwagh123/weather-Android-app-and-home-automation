@@ -203,8 +203,30 @@
 <!--                    android:src="@drawable/email_24"/>-->
 <!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
 
+            <LinearLayout
+                android:layout_marginVertical="20dp"
+                android:layout_width="wrap_content"
+                android:layout_marginHorizontal="60dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enabled massage alert"
+                    android:textColor="@color/black"/>
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:outlineSpotShadowColor="@color/black"
+                    style="@style/Widget.AppCompat.DrawerArrowToggle"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
+
 
     </ScrollView>
 
@@ -216,6 +238,8 @@
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"/>
+
+
 
 
 </RelativeLayout>
