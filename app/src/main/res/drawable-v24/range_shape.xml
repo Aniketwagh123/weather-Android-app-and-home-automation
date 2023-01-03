@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- range from your XD file. -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-	android:shape="oval" >
-	<stroke android:color="#ebe8e8" android:width="4dp" />
-	<solid android:color="@color/oval_color" />
-</shape>
-

@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -219,8 +220,9 @@ public class Temperature extends AppCompatActivity {
 
         RetrofitService retrofitService = new RetrofitService();
         UserApi userApi = retrofitService.getRetrofit().create(UserApi.class);
-
-        userApi.findByUsername("Aniket")
+        SharedPreferences srd = getSharedPreferences("demo",MODE_PRIVATE);
+        String username = srd.getString("username","");
+        userApi.findByUsername(username)
                 .enqueue(new Callback<Users>() {
                     @Override
                     public void onResponse(Call<Users> call, Response<Users> response) {
@@ -261,7 +263,7 @@ public class Temperature extends AppCompatActivity {
             Date timeMilliseconds = new Date(emissionsMilliSince1970Time);
             DateFormat dateTimeFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault());
 
-            return "Nov 8 2022";
+            return "";
         }
     }
 }

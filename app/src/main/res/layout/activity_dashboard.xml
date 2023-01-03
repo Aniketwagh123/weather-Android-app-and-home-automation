@@ -169,10 +169,64 @@
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/item_list"
+                android:layout_below="@+id/item_list"
                 android:layout_marginTop="40dp"
                 android:paddingStart="80dp"
                 android:paddingEnd="80dp" />
+
+<!--            <Switch-->
+<!--                android:id="@+id/switch1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/viewPager"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="200dp"-->
+<!--                android:checked="true"-->
+<!--                android:switchMinWidth="56dp"-->
+<!--                android:text="Switch1:"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textOff="OFF"-->
+<!--                android:textOn="ON"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold"-->
+<!--                tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+
+<!--            <androidx.appcompat.widget.SwitchCompat-->
+<!--                android:id="@+id/switch1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/item_list"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginVertical="30dp"-->
+<!--                android:checked="true"-->
+<!--                android:switchMinWidth="56dp"-->
+<!--                android:text="Switch1:"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textOff="OFF"-->
+<!--                android:textOn="ON"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+<!--            <androidx.appcompat.widget.SwitchCompat-->
+<!--                android:id="@+id/switch2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/switch1"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:checked="true"-->
+<!--                android:switchMinWidth="56dp"-->
+<!--                android:text="Switch2:"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textOff="OFF"-->
+<!--                android:textOn="ON"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="hooooo"-->
+<!--                android:textColor="@color/red"-->
+<!--               />-->
+
 
 
 
@@ -191,9 +245,43 @@
             <!--                android:layout_height="400dp"-->
             <!--                android:layout_below="@+id/lineChart"/>-->
 
+        <LinearLayout
+            android:id="@+id/meters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="-50dp"
+            android:layout_below="@id/viewPager"
+            android:layout_centerHorizontal="true"
 
+            >
+            <com.github.anastr.speedviewlib.PointerSpeedometer
+                android:id="@+id/pointerSpeedometer"
+                android:layout_width="250dp"
+                android:layout_marginBottom="60dp"
+                android:layout_height="250dp" />
+            <com.github.anastr.speedviewlib.AwesomeSpeedometer
+                android:id="@+id/awesomeSpeedometer"
+                android:layout_width="250dp"
+                android:layout_marginTop="-30dp"
+                app:sv_speedometerColor="@color/red"
+                android:layout_marginBottom="60dp"
+                android:layout_height="250dp" />
+        </LinearLayout>
+
+        <WebView
+            android:id="@+id/web"
+            android:layout_below="@id/meters"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="-20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+
+            tools:ignore="WebViewLayout" />
 
         </RelativeLayout>
+
 
     </ScrollView>
 
@@ -208,6 +296,9 @@
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"/>
+
+
+
 
 
 

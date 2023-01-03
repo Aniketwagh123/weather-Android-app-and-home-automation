@@ -1,5 +1,6 @@
 package com.example.techno.retrofit;
 
+import com.example.techno.model.HomeAtomation;
 import com.example.techno.model.SensorData;
 import com.example.techno.model.Users;
 
@@ -11,6 +12,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -29,5 +31,9 @@ public interface UserApi {
 
     @GET("/users/sdata")
     Call<ArrayList<SensorData>> getSensorData(String username, Date startDate , Date endDate);
+
+    @PUT("/update")
+    Call<String> status(@Body HomeAtomation homeAtomation);
+
 
 }

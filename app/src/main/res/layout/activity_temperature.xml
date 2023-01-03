@@ -54,13 +54,13 @@
 
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_below="@id/top_navigation"
-                android:layout_marginHorizontal="0dp"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/temperature_chart_shape" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="10dp"-->
+<!--                android:layout_below="@id/top_navigation"-->
+<!--                android:layout_marginHorizontal="0dp"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:background="@drawable/temperature_chart_shape" />-->
 
 
             <com.github.mikephil.charting.charts.LineChart
@@ -116,18 +116,18 @@
                     android:text="jan 01 2022"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:onClick="openDatePicker"/>
+                    />
 
 
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_below="@id/horizontal_history"
-                android:layout_marginHorizontal="0dp"
-                android:layout_marginBottom="7dp"
-                android:background="@drawable/temperature_chart_shape" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="10dp"-->
+<!--                android:layout_below="@id/horizontal_history"-->
+<!--                android:layout_marginHorizontal="0dp"-->
+<!--                android:layout_marginBottom="7dp"-->
+<!--                android:background="@drawable/temperature_chart_shape" />-->
             <RelativeLayout android:id="@+id/visibility_history"
                 android:layout_below="@id/horizontal_history"
                 android:layout_centerHorizontal="true"

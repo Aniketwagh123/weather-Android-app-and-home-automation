@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -217,30 +218,13 @@ public class Humidity extends AppCompatActivity {
     public void loadChart(){
         mpLineChart = findViewById(R.id.humidity_line_chart);
         dataValues = new ArrayList<>();
-
-//        dataValues.add(new Entry(0,30));
-//        dataValues.add(new Entry(1,20));
-//        dataValues.add(new Entry(2,0));
-//        dataValues.add(new Entry(3,30));
-//        dataValues.add(new Entry(4,-20));
-//        dataValues.add(new Entry(5,40));
-//        dataValues.add(new Entry(6,38));
-//        dataValues.add(new Entry(7,60));
-//        dataValues.add(new Entry(8,20));
-//        dataValues.add(new Entry(9,0));
-//        dataValues.add(new Entry(10,30));
-//        dataValues.add(new Entry(11,-20));
-//        dataValues.add(new Entry(12,40));
-//        dataValues.add(new Entry(13,38));
-//        dataValues.add(new Entry(14,48));
-//        dataValues.add(new Entry(15,35));
-//        dataValues.add(new Entry(16,58));
-
         RetrofitService retrofitService = new RetrofitService();
         UserApi userApi = retrofitService.getRetrofit().create(UserApi.class);
 
         Log.v("eee","Hi i am live");
-        userApi.findByUsername("Aniket")
+        SharedPreferences srd = getSharedPreferences("demo",MODE_PRIVATE);
+        String username = srd.getString("username","");
+        userApi.findByUsername(username)
                 .enqueue(new Callback<Users>() {
                     @Override
                     public void onResponse(Call<Users> call, Response<Users> response) {
@@ -252,7 +236,6 @@ public class Humidity extends AppCompatActivity {
                         designChart();
 
                     }
-
                     @Override
                     public void onFailure(Call<Users> call, Throwable t) {
                         Log.v("eee",t+"ncnvc");
@@ -283,7 +266,7 @@ public class Humidity extends AppCompatActivity {
             Date timeMilliseconds = new Date(emissionsMilliSince1970Time);
             DateFormat dateTimeFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault());
 
-            return "Nov 16 2022";
+            return "";
 
 
 
