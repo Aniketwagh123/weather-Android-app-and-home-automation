@@ -68,6 +68,10 @@ public class Login extends AppCompatActivity {
                                     Log.v("mass", String.valueOf(srd.getBoolean("isLogin",false)));
                                     editor.putBoolean("isLogin",true);
                                     editor.putString("username",response.body().getUserName());
+                                    editor.putString("deviceId",response.body().getDeviceId());
+                                    editor.putString("location",response.body().getUserLocation());
+                                    editor.putString("phone",response.body().getPhoneNumbers().get(0).getPhoneNumber());
+                                    editor.putString("email",response.body().getEmails().get(0).getEmailId());
                                     editor.apply();
 
                                     Log.v("mass", String.valueOf(srd.getBoolean("isLogin",false)));
